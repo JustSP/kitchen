@@ -21,3 +21,29 @@ type MenuItem = {
   title: string;
   icon: React.ReactElement;
 };
+
+type LoginResponse = {
+  success: boolean;
+  message: string;
+  session_duration: string;
+  session_token: string;
+  session_jwt: string;
+  error: unknown;
+};
+
+type LoginRequest = {
+  email: string;
+  password: string;
+};
+
+type SignUpRequest = {
+  orgName: string;
+  userFullName: string;
+  parent_id?: number;
+  role?: string;
+  isPrimary?: boolean;
+  email: string;
+  phone: string;
+  address: string;
+  password: string;
+};

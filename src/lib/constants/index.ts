@@ -82,6 +82,8 @@ export const APP_THEME = createTheme({
 
 export enum APP_ROUTES {
   HOME = "/",
+  SIGN_IN = "/signin",
+  SIGN_UP = "/signup",
 }
 
 export const DEFAULT_APP_STATE: AppVars = {

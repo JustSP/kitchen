@@ -54,6 +54,7 @@ const PageMenu: FC<PageMenuProps> = ({
         {isLoggedIn &&
           MenuItems.map((item, index) => (
             <NavLink
+              key={item.title}
               label={item.title}
               leftSection={item.icon}
               variant="filled"

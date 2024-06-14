@@ -1,8 +1,12 @@
+import { useContext } from "react";
 import PageLayout from "../lib/components/page.layout";
+import { AppContext } from "../lib/context/app.context";
 
 const HomePage = () => {
+  const { appState } = useContext(AppContext);
+
   return (
-    <PageLayout>
+    <PageLayout isLoggedIn={appState.isUserLoggedIn}>
       <h1>Demo</h1>
     </PageLayout>
   );
