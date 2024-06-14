@@ -7,8 +7,6 @@ import {
   Space,
   Text,
   TextInput,
-  NavLink,
-  SimpleGrid,
   Fieldset,
   useMantineTheme,
 } from "@mantine/core";
@@ -47,15 +45,22 @@ const RegisterPage = () => {
         )
           ? null
           : "Invalid organization name",
+      orgAddress: (value) => (value ? null : "Invalid organization address"),
       fullName: (value) =>
         /^[A-Za-z\p{L} .'-]+$/.test(value) ? null : "Invalid name",
       email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email"),
+      phone: (value) =>
+        /^(\+260|0)?(?:9[567]|7[567])\d{7}$/.test(value)
+          ? null
+          : "Invalid email",
       password: (value) =>
         /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=])[^\s].{10,}$/.test(
           value
         )
           ? null
           : "Weak password",
+      confirmPassword: (value, values) =>
+        value !== values.password ? "Passwords did not match" : null,
     },
   });
 

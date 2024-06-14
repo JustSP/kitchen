@@ -7,8 +7,6 @@ import {
   Space,
   Text,
   TextInput,
-  NavLink,
-  SimpleGrid,
 } from "@mantine/core";
 import PageLayout from "../lib/components/page.layout";
 import CardSimple from "../lib/components/card.simple";
