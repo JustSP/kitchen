@@ -1,16 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { MantineProvider } from "@mantine/core";
+import "@mantine/core/styles.css";
+import { APP_THEME } from "./lib/constants";
+import { AppContextProvider } from "./lib/context/app.context";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <MantineProvider defaultColorScheme="light" theme={APP_THEME}>
+    <AppContextProvider>
+      <App />
+    </AppContextProvider>
+  </MantineProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
